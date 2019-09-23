@@ -1,0 +1,9 @@
+spring:
+  application:
+     name: web-service
+info:
+  build:
+    group: ${group}
+    name: ${name}
+    description: ${description}
+    version: ${version}

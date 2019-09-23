@@ -1,0 +1,25 @@
+pivotal:
+  quotesService:
+    name: quotes-service
+  accountsService:
+    name: accounts-service
+vcap:
+  services:
+    es:
+      credentials:
+        cluster-name: elasticsearch
+        host: 10.193.138.120 # replace this with valid host
+        port: 30432 # replace this with valid port
+hystrix:
+  metrics:
+    enabled: false
+spring:
+  sleuth:
+    stream:
+      enabled: false
+  cloud:
+    discovery:
+      enabled: false
+    service-registry:
+      auto-registration:
+        enabled: false

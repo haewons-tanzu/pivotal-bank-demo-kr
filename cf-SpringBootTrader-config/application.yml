@@ -1,0 +1,30 @@
+pivotal:
+  quotesService:
+    name: quotes-service
+  userService:
+    name: user-service  
+  accountsService:
+    name: accounts-service
+  portfolioService:
+    name: portfolio-service
+  analyticsService:
+    name: analytics-service
+logging:
+  level:
+     io:
+        pivotal: DEBUG
+     com:
+        netflix: FATAL
+     org:
+        springframework:
+           web: WARN
+           cloud: WARN
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

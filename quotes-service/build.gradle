@@ -1,0 +1,58 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'quotes'
+    version = ""  // omit the version from the war file name
+}
+
+description = "Micro-service to retrieve up to date quotes"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springCloudServicesVersion = '2.0.1.RELEASE'
+    springCloudVersion = 'Finchley.RELEASE'
+}
+
+dependencies {
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+
+    compile "org.springframework.cloud:spring-cloud-starter-zipkin"
+
+    compileOnly "org.projectlombok:lombok"
+
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-circuit-breaker"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:${springCloudServicesVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

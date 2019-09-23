@@ -1,0 +1,6 @@
+spring:
+  application:
+     name: user-service
+  jpa:
+     hibernate:
+        ddl-auto: update

@@ -1,0 +1,23 @@
+pivotal:
+  quotes:
+    quote_url: https://api.iextrading.com/1.0/stock/{symbol}/quote
+    quotes_url: https://api.iextrading.com/1.0/stock/market/batch?symbols={symbols}&types=quote
+    companies_url: http://dev.markitondemand.com/Api/v2/Lookup/json?input={name}
+logging:
+  level:
+    org:
+      apache:
+        http: debug
+hystrix:
+  metrics:
+    enabled: false
+spring:
+  sleuth:
+    stream:
+      enabled: false
+  cloud:
+    discovery:
+      enabled: false
+    service-registry:
+      auto-registration:
+        enabled: false

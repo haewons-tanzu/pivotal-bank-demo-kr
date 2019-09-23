@@ -1,0 +1,5 @@
+######## Need to confirm service name and plan based upon your cloud foundry instances
+p-service-registry trial discovery-service
+p-config-server trial config-server
+p-circuit-breaker-dashboard trial circuit-breaker-dashboard
+p.mysql db-small traderdb
