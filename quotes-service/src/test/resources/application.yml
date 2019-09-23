@@ -1,8 +1,14 @@
+#pivotal:
+#  quotes:
+#    quote_url: https://api.iextrading.com/1.0/stock/{symbol}/quote
+#    quotes_url: https://api.iextrading.com/1.0/stock/market/batch?symbols={symbols}&types=quote
+#    companies_url: http://dev.markitondemand.com/Api/v2/Lookup/json?input={name}
 pivotal:
   quotes:
-    quote_url: https://api.iextrading.com/1.0/stock/{symbol}/quote
-    quotes_url: https://api.iextrading.com/1.0/stock/market/batch?symbols={symbols}&types=quote
-    companies_url: http://dev.markitondemand.com/Api/v2/Lookup/json?input={name}
+    quote_url: https://cloud.iexapis.com/v1/stock/{symbol}/quote/?token=sk_a66da9dad6114f43b94f53d5d19cf927
+    quotes_url: https://cloud.iexapis.com/v1/stock/market/batch?symbols={symbols}&types=quote&token=sk_a66da9dad6114f43b94f53d5d19cf927
+    companies_url: http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input={name}
+
 logging:
   level:
     org:
