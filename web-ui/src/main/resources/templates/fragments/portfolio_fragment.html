@@ -113,10 +113,10 @@
 					<tfoot>
 						<tr
 							th:class="${portfolio.currentTotalValue + portfolio.sellValue - portfolio.purchaseValue} &lt; 0? 'summary bold alert alert-block danger' : 'summary bold alert alert-block success'">
-							<td colspan="5">Total</td>
+							<td colspan="6">Total</td>
 							<td th:text="${#numbers.formatDecimal(portfolio.currentTotalValue, 0, 'COMMA', 2, 'POINT')}">0</td>
 							<td th:text="${#numbers.formatDecimal(portfolio.currentTotalValue + portfolio.sellValue - portfolio.purchaseValue, 0, 'COMMA', 2, 'POINT')}">0</td>
-							<td colspan="2">&nbsp;</td>
+							<td colspan="3">&nbsp;</td>
 						</tr>
 					</tfoot>
 				</table>
