@@ -32,11 +32,11 @@ create_single_service()
       #Annoying hack because of quotes, single quotes etc ....
       GIT=`printf '{"git":{"uri":"%s","searchPaths":"%s","label":"%s"}}\n' "${GITHUB_URI}" ${GITHUB_SEARCHPATHS} ${GITHUB_BRANCH}`
       cf create-service $line -c ''$GIT''
-    elif [[ $line == *"p-mysql"* ]]
+    elif [[ $line == *"cleardb"* ]]
     then
       #Yet another annoying hack ....
-      PCF_PLAN=`cf marketplace -s p-mysql | grep 100mb | cut -d " " -f1 | xargs`
-      cf create-service p-mysql $PCF_PLAN $SI
+      PCF_PLAN=`cf marketplace -s cleardb | grep spark | cut -d " " -f1 | xargs`
+      cf create-service cleardb $PCF_PLAN $SI
     else
       cf create-service $line
     fi
